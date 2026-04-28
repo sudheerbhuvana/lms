@@ -3,16 +3,18 @@ version: "3.9"
 # ──────────────────────────────────────────────────────────────────────
 # Coolify + Traefik Deployment Notes:
 #   • Coolify / Traefik handles SSL, domains, and external routing.
-#   • Only the frontend (nginx) needs to be exposed — configure the
-#     domain in Coolify UI pointing at port 80 of the frontend service.
-#   • The backend is internal-only; nginx proxies /api/* to it over
-#     the lms-network bridge (no external port needed).
-#   • Set all env vars in Coolify's "Environment Variables" section.
+#   • In Coolify UI, configure:
+#       - frontend service → your app domain  (port 3000)
+#       - backend service  → your api domain  (port 8080)
+#   • Set VITE_API_URL to your backend's public URL in Coolify's
+#     "Build Arguments" (e.g. https://api.yourdomain.com)
+#   • Set all other secrets in Coolify's "Environment Variables" section.
 # ──────────────────────────────────────────────────────────────────────
 
 services:
   # ─────────────────────────────────────────
-  # Spring Boot Backend (internal only)
+  # Spring Boot Backend
+  # Traefik routes: https://api.yourdomain.com → port 8080
   # ─────────────────────────────────────────
   backend:
     build:
@@ -20,8 +22,6 @@ services:
       dockerfile: Dockerfile
     container_name: lms-backend
     restart: unless-stopped
-    # No external port — Traefik never touches this directly.
-    # Nginx inside the frontend container proxies /api/ → backend:8080.
     expose:
       - "8080"
     environment:
@@ -50,17 +50,20 @@ services:
       - lms-network
 
   # ─────────────────────────────────────────
-  # React Frontend → Nginx
-  # Traefik routes your domain here (port 80)
+  # React Frontend (serve on port 3000)
+  # Traefik routes: https://yourdomain.com → port 3000
+  # VITE_API_URL must be set as a build arg in Coolify
   # ─────────────────────────────────────────
   frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL}
     container_name: lms-frontend
     restart: unless-stopped
     expose:
-      - "80"
+      - "3000"
     depends_on:
       - backend
     networks:

@@ -1,25 +1,33 @@
-FROM node:20-alpine AS builder
+# ---- Build Stage ----
+FROM node:22-alpine AS builder
 
 WORKDIR /app
 
-COPY package.json package-lock.json ./
-RUN npm ci --silent
+# Enable legacy peer deps for compatibility
+ENV NPM_CONFIG_LEGACY_PEER_DEPS=true
+
+COPY package*.json ./
+
+RUN npm ci
 
 COPY . .
+
+# Backend API URL injected at build time by Coolify / docker-compose
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
+
 RUN npm run build
 
-# ── Stage 2: Serve with Nginx ────────────────────────────────────────
-FROM nginx:alpine
 
-# Remove default nginx config
-RUN rm /etc/nginx/conf.d/default.conf
+# ---- Production Stage ----
+FROM node:22-alpine AS runner
 
-# Custom nginx config — proxy /api calls to backend
-COPY nginx.conf /etc/nginx/conf.d/app.conf
+WORKDIR /app
 
-# Copy built assets
-COPY --from=builder /app/dist /usr/share/nginx/html
+RUN npm install -g serve
 
-EXPOSE 80
+COPY --from=builder /app/dist ./dist
 
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 3000
+
+CMD ["serve", "-s", "dist", "-l", "3000"]
