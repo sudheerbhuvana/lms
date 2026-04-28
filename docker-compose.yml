@@ -1,0 +1,71 @@
+version: "3.9"
+
+# ──────────────────────────────────────────────────────────────────────
+# Coolify + Traefik Deployment Notes:
+#   • Coolify / Traefik handles SSL, domains, and external routing.
+#   • Only the frontend (nginx) needs to be exposed — configure the
+#     domain in Coolify UI pointing at port 80 of the frontend service.
+#   • The backend is internal-only; nginx proxies /api/* to it over
+#     the lms-network bridge (no external port needed).
+#   • Set all env vars in Coolify's "Environment Variables" section.
+# ──────────────────────────────────────────────────────────────────────
+
+services:
+  # ─────────────────────────────────────────
+  # Spring Boot Backend (internal only)
+  # ─────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: lms-backend
+    restart: unless-stopped
+    # No external port — Traefik never touches this directly.
+    # Nginx inside the frontend container proxies /api/ → backend:8080.
+    expose:
+      - "8080"
+    environment:
+      # Database
+      DB_URL: ${DB_URL}
+      DB_USERNAME: ${DB_USERNAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      # JWT
+      JWT_SECRET: ${JWT_SECRET}
+      # Email
+      MAIL_USERNAME: ${MAIL_USERNAME}
+      MAIL_PASSWORD: ${MAIL_PASSWORD}
+      # Storage (AWS S3 / Cloudflare R2)
+      AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+      AWS_SECRET_KEY: ${AWS_SECRET_KEY}
+      AWS_REGION: ${AWS_REGION:-auto}
+      AWS_ENDPOINT: ${AWS_ENDPOINT}
+      AWS_S3_BUCKET: ${AWS_S3_BUCKET}
+      AWS_PUBLIC_URL: ${AWS_PUBLIC_URL}
+      # Stripe
+      STRIPE_PUBLIC_KEY: ${STRIPE_PUBLIC_KEY:-pk_test_dummy}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY:-sk_test_dummy}
+      # Active profile
+      SPRING_PROFILES_ACTIVE: prod
+    networks:
+      - lms-network
+
+  # ─────────────────────────────────────────
+  # React Frontend → Nginx
+  # Traefik routes your domain here (port 80)
+  # ─────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: lms-frontend
+    restart: unless-stopped
+    expose:
+      - "80"
+    depends_on:
+      - backend
+    networks:
+      - lms-network
+
+networks:
+  lms-network:
+    driver: bridge
