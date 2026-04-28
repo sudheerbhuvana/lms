@@ -155,8 +155,8 @@ const Index = () => {
               <i className="bi bi-arrow-up-right ps-2"></i>
             </button>
 
-            <div className="about-"/Images/user.png" flex">
-              <img src={"/Images/user.png"} className="w-10 h-10" alt=""/Images/user.png"-image" />
+            <div className="about-user flex">
+              <img src={"/Images/user.png"} className="w-10 h-10" alt="user-image" />
               <div className="ps-2">
                 <span className="sora-font text-sm">LearnHub</span>
                 <p className="text-[#576070] text-xs">Premier Learning Platform</p>
@@ -167,7 +167,7 @@ const Index = () => {
         <div className="about-image w-full lg:w-1/2 h-[550px] overflow-hidden group rounded-lg z-2">
           <img
             src={"/Images/about-image.jpg"}
-            alt="about-"/Images/user.png""
+            alt="about-user"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
