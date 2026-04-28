@@ -50,9 +50,11 @@ jwt:
 aws:
   access-key: ${AWS_ACCESS_KEY}
   secret-key: ${AWS_SECRET_KEY}
-  region: ap-south-1
+  region: ${AWS_REGION:auto}
+  endpoint: ${AWS_ENDPOINT:}
   s3:
-    bucket-name: lmsmediastore
+    bucket-name: ${AWS_S3_BUCKET:lmsmediastore}
+    public-url: ${AWS_PUBLIC_URL:}
 
 # Stripe
 stripe:
