@@ -29,6 +29,9 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthFilter;
 
     @Value("${stripe.frontend-url:http://localhost:3000}")
+    private String stripeRedirectUrl;
+
+    @Value("${app.frontend-url:http://localhost:5173}")
     private String frontendUrl;
 
     @Bean
@@ -48,6 +51,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.GET, "/api/v1/engagement/leaderboard").permitAll()
                         .requestMatchers("/api/v1/auth/**").permitAll()   // 🔥 allow register/login
                         .requestMatchers("/api/v1/payments/webhook").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/certificates/verify/**").permitAll()
                         // Swagger
                         .requestMatchers("/swagger-ui/**", "/api-docs/**", "/swagger-ui.html").permitAll()
                         // All others require authentication
@@ -60,7 +64,14 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(frontendUrl,"https://development.dzt6pjgfqs25v.amplifyapp.com/", "https://letslearn-lms.vercel.app", "http://localhost:3000", "http://localhost:5173"));
+        configuration.setAllowedOrigins(List.of(
+                frontendUrl,                                           // FRONTEND_URL env var
+                "http://localhost:3000",
+                "http://localhost:5173",
+                "http://localhost:5174",
+                "https://development.dzt6pjgfqs25v.amplifyapp.com",
+                "https://letslearn-lms.vercel.app"
+        ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Accept", "Origin", "X-Requested-With"));
         configuration.setExposedHeaders(List.of("Authorization"));

@@ -17,6 +17,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import About from "./pages/About";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import VerifyCertificate from "./pages/VerifyCertificate";
 
 // Student Portal
 import StudentDashboard from "./student/Dashboard";
@@ -46,6 +47,7 @@ import StudentGrades from "./student/Grades";
 import StudentBadges from "./student/Badges";
 import StudentAssignments from "./student/Assignments";
 import StudentNotifications from "./student/Notifications";
+import Certificate from "./student/Certificate";
 
 // Role-based Route Protection
 const RoleRoute = ({ children, allowedRoles }) => {
@@ -129,6 +131,7 @@ const AppContent = () => {
             <Route path="/About" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/verify/:code" element={<VerifyCertificate />} />
             
             {/* ---------------- STUDENT PORTAL ---------------- */}
             <Route path="/courses" element={<CourseBrowse />} />
@@ -169,6 +172,7 @@ const AppContent = () => {
             <Route path="/student/badges" element={<RoleRoute allowedRoles={["STUDENT"]}><StudentBadges /></RoleRoute>}/>
             <Route path="/student/assignments" element={<RoleRoute allowedRoles={["STUDENT"]}><StudentAssignments /></RoleRoute>}/>
             <Route path="/student/notifications" element={<RoleRoute allowedRoles={["STUDENT"]}><StudentNotifications /></RoleRoute>}/>
+            <Route path="/student/certificate/:courseId" element={<RoleRoute allowedRoles={["STUDENT"]}><Certificate /></RoleRoute>}/>
 
             {/* Legacy Fallback Redirect for old Dashboard link */}
             <Route path="/dashboard" element={<DashboardRedirect />} />

@@ -3,33 +3,11 @@ import { getPublishedCourses } from "../api/courses";
 import { BsCheckAll } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-import element1 from "../../public/Images/element-01.png";
-import element2 from "../../public/Images/element-02.png";
-import element3 from "../../public/Images/element-03.png";
-import element4 from "../../public/Images/element-04.png";
-import element5 from "../../public/Images/element-05.png";
-import element6 from "../../public/Images/element-06.png";
-
-import about1 from "../../public/Images/about-img1.png";
-import about2 from "../../public/Images/about-img2.png";
-import user from "../../public/Images/user.png";
-import aboutimage from "../../public/Images/about-image.jpg";
-
-import whychoose from "../../public/Images/why-choose-us-image.jpg";
-
-import featureicon1 from "../../public/Images/feature-icon1.png";
-import featureicon2 from "../../public/Images/feature-icon2.png";
-import featureicon3 from "../../public/Images/feature-icon3.png";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faMessage, faUserCircle } from "@fortawesome/free-regular-svg-icons";
 
-
-import article1 from '../../public/Images/articles-01.jpg';
-import article2 from '../../public/Images/articles-02.jpg';
-import article3 from '../../public/Images/articles-03.jpg';
 const Index = () => {
   
   const [courses, setCourses] = useState([]);
@@ -78,39 +56,39 @@ const Index = () => {
         </div>
 
         <img
-          src={element1}
+          src={"/Images/element-01.png"}
           alt="shape-image"
-          className="element1 hero-shape1 absolute left-30 top-30 object-contain hidden md:block"
+          className="hero-shape1 absolute left-30 top-30 object-contain hidden md:block"
         />
         <img
-          src={element2}
+          src={"/Images/element-02.png"}
           alt="shape-image"
-          className="element2 hero-shape2 absolute left-20 top-60 object-contain hidden md:block"
+          className="hero-shape2 absolute left-20 top-60 object-contain hidden md:block"
         />
         <img
-          src={element3}
+          src={"/Images/element-03.png"}
           alt="shape-image"
-          className="element3 hero-shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block"
+          className="hero-shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block"
         />
         <img
-          src={element4}
+          src={"/Images/element-04.png"}
           alt="shape-image"
-          className="element4 hero-shape4 absolute right-40 bottom-50 z-2 object-contain hidden lg:block"
+          className="hero-shape4 absolute right-40 bottom-50 z-2 object-contain hidden lg:block"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 hero-shape5 absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex"
+          className="hero-shape5 absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 hero-shape5 absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex"
+          className="hero-shape5 absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex"
         />
         <img
-          src={element6}
+          src={"/Images/element-06.png"}
           alt="shape-image"
-          className="element6 hero-shape6 absolute right-50 top-20 w-[25px] hidden lg:flex"
+          className="hero-shape6 absolute right-50 top-20 w-[25px] hidden lg:flex"
         />
       </div>
       {/* About */}
@@ -132,7 +110,7 @@ const Index = () => {
             <li className="flex gap-3 sm:flex-nowrap flex-wrap">
               <div className="bg-[#f3f9ff] rounded-[50%] min-w-[70px] min-h-[60px] flex justify-center p-4">
                 <img
-                  src={about1}
+                  src={"/Images/about-img1.png"}
                   alt="about-image"
                   className="object-contain"
                 />
@@ -150,7 +128,7 @@ const Index = () => {
             <li className="flex gap-3 sm:flex-nowrap flex-wrap">
               <div className="bg-[#f3f9ff] rounded-[50%] min-w-[70px] min-h-[60px] flex justify-center p-4">
                 <img
-                  src={about2}
+                  src={"/Images/about-img2.png"}
                   alt="about-image"
                   className="object-contain"
                 />
@@ -177,8 +155,8 @@ const Index = () => {
               <i className="bi bi-arrow-up-right ps-2"></i>
             </button>
 
-            <div className="about-user flex">
-              <img src={user} className="w-10 h-10" alt="user-image" />
+            <div className="about-"/Images/user.png" flex">
+              <img src={"/Images/user.png"} className="w-10 h-10" alt=""/Images/user.png"-image" />
               <div className="ps-2">
                 <span className="sora-font text-sm">LearnHub</span>
                 <p className="text-[#576070] text-xs">Premier Learning Platform</p>
@@ -188,30 +166,30 @@ const Index = () => {
         </div>
         <div className="about-image w-full lg:w-1/2 h-[550px] overflow-hidden group rounded-lg z-2">
           <img
-            src={aboutimage}
-            alt="about-user"
+            src={"/Images/about-image.jpg"}
+            alt="about-"/Images/user.png""
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         </div>
         <img
-          src={element1}
+          src={"/Images/element-01.png"}
           alt="shape-image"
-          className="element1 about-shape1 absolute left-10 top-30 object-contain sm:block hidden"
+          className="about-shape1 absolute left-10 top-30 object-contain sm:block hidden"
         />
         <img
-          src={element6}
+          src={"/Images/element-06.png"}
           alt="shape-image"
-          className="element5 about-shape7 absolute right-10 bottom-10 object-contain lg:block hidden"
+          className="about-shape7 absolute right-10 bottom-10 object-contain lg:block hidden"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 about-shape6 absolute left-10 bottom-50 w-[25px] h-[25px] sm:block hidden"
+          className="about-shape6 absolute left-10 bottom-50 w-[25px] h-[25px] sm:block hidden"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 about-shape5 absolute right-30 top-70 w-[20px] h-[20px] sm:block hidden"
+          className="about-shape5 absolute right-30 top-70 w-[20px] h-[20px] sm:block hidden"
         />
       </div>
       {/* Features */}
@@ -250,7 +228,7 @@ const Index = () => {
           <SwiperSlide>
             <div className="feature-item hover:bg-[#006dca] group flex justify-center items-start flex-col bg-white shadow-xl rounded-xl py-10 px-5 transition-all duration-300">
               <div className="feature-icon w-fit bg-white rounded-[50%] p-5">
-                <img src={featureicon1} alt="feature-icon" />
+                <img src={"/Images/feature-icon1.png"} alt="feature-icon" />
               </div>
               <div className="feature-info pt-8">
                 <h4 className="text-[#222e48] sora-font pb-2 text-xl font-semibold group-hover:text-white">
@@ -266,7 +244,7 @@ const Index = () => {
           <SwiperSlide>
             <div className="feature-item hover:bg-[#006dca] group flex justify-center items-start flex-col bg-white shadow-xl rounded-xl py-10 px-5 transition-all duration-300">
               <div className="feature-icon w-fit bg-white rounded-[50%] p-5">
-                <img src={featureicon2} alt="feature-icon" />
+                <img src={"/Images/feature-icon2.png"} alt="feature-icon" />
               </div>
               <div className="feature-info pt-8">
                 <h4 className="text-[#222e48] sora-font pb-2 text-xl font-semibold group-hover:text-white">
@@ -282,7 +260,7 @@ const Index = () => {
           <SwiperSlide>
             <div className="feature-item hover:bg-[#006dca] group flex justify-center items-start flex-col bg-white shadow-xl rounded-xl py-10 px-5 transition-all duration-300">
               <div className="feature-icon w-fit bg-white rounded-[50%] p-5">
-                <img src={featureicon3} alt="feature-icon" />
+                <img src={"/Images/feature-icon3.png"} alt="feature-icon" />
               </div>
               <div className="feature-info pt-8">
                 <h4 className="text-[#222e48] sora-font pb-2 text-xl font-semibold group-hover:text-white">
@@ -298,7 +276,7 @@ const Index = () => {
           <SwiperSlide>
             <div className="feature-item hover:bg-[#006dca] group flex justify-center items-start flex-col bg-white shadow-xl rounded-xl py-10 px-5 transition-all duration-300">
               <div className="feature-icon w-fit bg-white rounded-[50%] p-5">
-                <img src={featureicon3} alt="feature-icon" />
+                <img src={"/Images/feature-icon3.png"} alt="feature-icon" />
               </div>
               <div className="feature-info pt-8">
                 <h4 className="text-[#222e48] sora-font pb-2 text-xl font-semibold group-hover:text-white">
@@ -313,24 +291,24 @@ const Index = () => {
         </Swiper>
 
         <img
-          src={element3}
+          src={"/Images/element-03.png"}
           alt="shape"
-          className="element3 hero-shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block"
+          className="hero-shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape"
-          className="element5 hero-shape3 absolute right-30 top-70 w-[20px] h-[20px] object-contain hidden sm:flex"
+          className="hero-shape3 absolute right-30 top-70 w-[20px] h-[20px] object-contain hidden sm:flex"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape"
-          className="element5 hero-shape3 absolute left-10 bottom-50 w-[25px] h-[25px] object-contain hidden sm:flex"
+          className="hero-shape3 absolute left-10 bottom-50 w-[25px] h-[25px] object-contain hidden sm:flex"
         />
         <img
-          src={element6}
+          src={"/Images/element-06.png"}
           alt="shape"
-          className="element5 hero-shape3 absolute right-70 top-20  object-contain hidden lg:flex"
+          className="hero-shape3 absolute right-70 top-20  object-contain hidden lg:flex"
         />
       </div>
       {/* Our Achivements */}
@@ -391,7 +369,7 @@ const Index = () => {
           </div>
         </div>
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
           className="element-5 hero-shape5 absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex"
         />
@@ -479,39 +457,39 @@ const Index = () => {
           )}
         </div>
         <img
-          src={element1}
+          src={"/Images/element-01.png"}
           alt="shape-image"
-          className="element1 hero-shape1 absolute left-30 top-30 object-contain hidden lg:block"
+          className="hero-shape1 absolute left-30 top-30 object-contain hidden lg:block"
         />
         <img
-          src={element2}
+          src={"/Images/element-02.png"}
           alt="shape-image"
-          className="element2 hero-shape2 absolute left-20 top-60 object-contain hidden lg:block"
+          className="hero-shape2 absolute left-20 top-60 object-contain hidden lg:block"
         />
         <img
-          src={element3}
+          src={"/Images/element-03.png"}
           alt="shape-image"
-          className="element3 hero-shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block"
+          className="hero-shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block"
         />
         <img
-          src={element4}
+          src={"/Images/element-04.png"}
           alt="shape-image"
-          className="element3 hero-shape4 absolute right-40 bottom-50 z-2 object-contain hidden lg:block"
+          className="hero-shape4 absolute right-40 bottom-50 z-2 object-contain hidden lg:block"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 hero-shape5 absolute right-30 top-70 w-[25px] h-[25px] object-contain hidden sm:flex"
+          className="hero-shape5 absolute right-30 top-70 w-[25px] h-[25px] object-contain hidden sm:flex"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 hero-shape6 absolute left-10 bottom-50 w-[25px] h-[25px] object-contain hidden sm:flex"
+          className="hero-shape6 absolute left-10 bottom-50 w-[25px] h-[25px] object-contain hidden sm:flex"
         />
         <img
-          src={element6}
+          src={"/Images/element-06.png"}
           alt="shape-image"
-          className="element5 hero-shape7 absolute right-50 top-20 hidden lg:flex"
+          className="hero-shape7 absolute right-50 top-20 hidden lg:flex"
         />
       </div>
       {/* Why Choose Us */}
@@ -519,7 +497,7 @@ const Index = () => {
         {/* Image (Left Side) */}
         <div className="why-choose-us-image w-full lg:w-1/2 h-[500px] overflow-hidden group rounded-lg">
           <img
-            src={whychoose}
+            src={"/Images/why-choose-us-image.jpg"}
             alt="why-choose-us"
             className="h-full w-full object-cover transition-all duration-500 group-hover:scale-110"
           />
@@ -568,24 +546,24 @@ const Index = () => {
 
         {/* Shapes */}
         <img
-          src={element2}
+          src={"/Images/element-02.png"}
           alt="shape-image"
-          className="element2 hero-shape-2 absolute left-20 top-60 object-contain md:block hidden "
+          className="hero-shape-2 absolute left-20 top-60 object-contain md:block hidden "
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 hero-shape-5 absolute right-30 top-70 w-[20px] h-[20px] sm:flex hidden"
+          className="hero-shape-5 absolute right-30 top-70 w-[20px] h-[20px] sm:flex hidden"
         />
         <img
-          src={element5}
+          src={"/Images/element-05.png"}
           alt="shape-image"
-          className="element5 hero-shape-6 absolute left-10 bottom-50 w-[25px] h-[25px] sm:flex hidden"
+          className="hero-shape-6 absolute left-10 bottom-50 w-[25px] h-[25px] sm:flex hidden"
         />
         <img
-          src={element6}
+          src={"/Images/element-06.png"}
           alt="shape-image"
-          className="element5 hero-shape-7 absolute right-50 top-20 lg:flex hidden"
+          className="hero-shape-7 absolute right-50 top-20 lg:flex hidden"
         />
       </div>
       {/* Articles */}
@@ -605,7 +583,7 @@ const Index = () => {
           {/* cart-1 */}
           <div className="articles-item bg-white p-5 pb-3 rounded-xl group shadow-lg">
             <div className="articles-image w-full rounded-xl overflow-hidden">
-              <img src={article1} alt="articles-image" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+              <img src={"/Images/articles-01.jpg"} alt="articles-image" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
             </div>
             <div className="articles-content py-5">
               <span className="bg-[#f37638] text-white rounded-sm px-2 chakrapetch-font font-semibold py-1">Student life</span>
@@ -642,7 +620,7 @@ const Index = () => {
           {/* Cart-2 */}
           <div className="articles-item bg-white p-5 pb-3 rounded-xl group shadow-lg">
             <div className="articles-image w-full rounded-xl overflow-hidden">
-              <img src={article2} alt="articles-image" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+              <img src={"/Images/articles-02.jpg"} alt="articles-image" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
             </div>
             <div className="articles-content py-5">
               <span className="bg-[#16a34a] text-white rounded-sm px-2 chakrapetch-font font-semibold py-1">Freedom</span>
@@ -679,7 +657,7 @@ const Index = () => {
           {/* cart-3 */}
           <div className="articles-item bg-white p-5 pb-3 rounded-xl group shadow-lg">
             <div className="articles-image w-full rounded-xl overflow-hidden">
-              <img src={article3} alt="articles-image" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
+              <img src={"/Images/articles-03.jpg"} alt="articles-image" className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" />
             </div>
             <div className="articles-content py-5">
               <span className="bg-[#17bbe4] text-white rounded-sm px-2 chakrapetch-font font-semibold py-1">Online</span>
@@ -715,13 +693,13 @@ const Index = () => {
           </div>
         </div>
 
-        <img src={element1} alt="shape-image" className="element1 hero-shape1 absolute left-30 top-30 object-contain hidden md:block"/>
-        <img src={element2} alt="shape-image" className="element2 hero-shape2 absolute left-20 top-60 object-contain hidden md:block"/>
-        <img src={element3} alt="shape-image" className="element3 hero-shape3 absolute right-96 bottom-10 z-1 object-contain hidden lg:block"/>
-        <img src={element4} alt="shape-image" className="element3 hero-shape4 absolute right-40 bottom-50 z-0 object-contain hidden lg:block"/>
-        <img src={element5} alt="shape-image" className="element5 hero-shape5 absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex"/>
-        <img src={element5} alt="shape-image" className="element5 hero-shape5 absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex"/>
-        <img src={element6} alt="shape-image" className="element5 hero-shape5 absolute right-50 top-20 z-2 hidden lg:flex"/>
+        <img src={"/Images/element-01.png"} alt="shape-image" className="hero-shape1 absolute left-30 top-30 object-contain hidden md:block"/>
+        <img src={"/Images/element-02.png"} alt="shape-image" className="hero-shape2 absolute left-20 top-60 object-contain hidden md:block"/>
+        <img src={"/Images/element-03.png"} alt="shape-image" className="hero-shape3 absolute right-96 bottom-10 z-1 object-contain hidden lg:block"/>
+        <img src={"/Images/element-04.png"} alt="shape-image" className="hero-shape4 absolute right-40 bottom-50 z-0 object-contain hidden lg:block"/>
+        <img src={"/Images/element-05.png"} alt="shape-image" className="hero-shape5 absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex"/>
+        <img src={"/Images/element-05.png"} alt="shape-image" className="hero-shape5 absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex"/>
+        <img src={"/Images/element-06.png"} alt="shape-image" className="hero-shape5 absolute right-50 top-20 z-2 hidden lg:flex"/>
       </div>
     </>
   );

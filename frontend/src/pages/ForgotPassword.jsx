@@ -3,8 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-regular-svg-icons";
 import { forgotPassword, verifyPasswordResetOtp, resetPassword } from "../api/auth";
-import element1 from "../../public/Images/element-01.png";
-import element5 from "../../public/Images/element-05.png";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
@@ -62,8 +60,8 @@ const ForgotPassword = () => {
           <li><Link to="/"><FontAwesomeIcon icon={faHome} className="pr-1" /><span className="text-sm text-[#404a60]">Home</span></Link></li>
           / <li><span className="text-sm text-[#f37739]">Forgot Password</span></li>
         </ul>
-        <img src={element1} alt="shape" className="absolute left-30 top-30 object-contain hidden md:block" />
-        <img src={element5} alt="shape" className="absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex" />
+        <img src={"/Images/element-01.png"} alt="shape" className="absolute left-30 top-30 object-contain hidden md:block" />
+        <img src={"/Images/element-05.png"} alt="shape" className="absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex" />
       </div>
 
       <div className="px-[2%] lg:px-[12%] sm:px-[8%] py-[50px] lg:py-[80px] flex justify-center">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axiosInstance from "../api/axiosInstance";
 
 const StudentGrades = () => {
@@ -59,6 +60,7 @@ const StudentGrades = () => {
                 <th className="px-6 py-3 text-left font-semibold text-[#576070]">Completion %</th>
                 <th className="px-6 py-3 text-left font-semibold text-[#576070]">Grade</th>
                 <th className="px-6 py-3 text-left font-semibold text-[#576070]">Status</th>
+                <th className="px-6 py-3 text-left font-semibold text-[#576070]">Certificate</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#ebecef]">
@@ -87,6 +89,18 @@ const StudentGrades = () => {
                         <span className="bg-green-100 text-green-700 px-2.5 py-1 rounded-full text-xs font-semibold">✓ Completed</span>
                       ) : (
                         <span className="bg-blue-100 text-blue-700 px-2.5 py-1 rounded-full text-xs font-semibold">In Progress</span>
+                      )}
+                    </td>
+                    <td className="px-6 py-4">
+                      {isCompleted ? (
+                        <Link
+                          to={`/student/certificate/${e.courseId}`}
+                          className="inline-flex items-center gap-1.5 bg-[#f37739] hover:bg-[#e06828] text-white px-3 py-1.5 rounded-full text-xs font-semibold transition-colors"
+                        >
+                          <i className="bi bi-award-fill"></i> Download
+                        </Link>
+                      ) : (
+                        <span className="text-[#a0aab8] text-xs">—</span>
                       )}
                     </td>
                   </tr>

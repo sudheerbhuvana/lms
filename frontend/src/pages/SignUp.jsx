@@ -4,13 +4,6 @@ import { faHome } from "@fortawesome/free-regular-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../api/auth";
 
-import element1 from "../../public/Images/element-01.png";
-import element2 from "../../public/Images/element-02.png";
-import element3 from "../../public/Images/element-03.png";
-import element4 from "../../public/Images/element-04.png";
-import element5 from "../../public/Images/element-05.png";
-import learningImage from "../../public/Images/learning_image.png";
-
 const SignUp = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -65,12 +58,12 @@ const SignUp = () => {
             <span className="text-sm xl:text-md text-[#f37739]">Sign Up</span>
           </li>
         </ul>
-        <img src={element1} alt="shape" className="absolute left-30 top-30 hidden md:block" />
-        <img src={element2} alt="shape" className="absolute left-20 top-60 hidden md:block" />
-        <img src={element3} alt="shape" className="absolute right-96 bottom-10 hidden lg:block" />
-        <img src={element4} alt="shape" className="absolute right-30 bottom-30 hidden lg:block" />
-        <img src={element5} alt="shape" className="absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex" />
-        <img src={element5} alt="shape" className="absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex" />
+        <img src={"/Images/element-01.png"} alt="shape" className="absolute left-30 top-30 hidden md:block" />
+        <img src={"/Images/element-02.png"} alt="shape" className="absolute left-20 top-60 hidden md:block" />
+        <img src={"/Images/element-03.png"} alt="shape" className="absolute right-96 bottom-10 hidden lg:block" />
+        <img src={"/Images/element-04.png"} alt="shape" className="absolute right-30 bottom-30 hidden lg:block" />
+        <img src={"/Images/element-05.png"} alt="shape" className="absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex" />
+        <img src={"/Images/element-05.png"} alt="shape" className="absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex" />
       </div>
 
       <div className="px-[2%] lg:px-[12%] sm:px-[8%] py-[50px] lg:py-[80px] w-full flex flex-col lg:flex-row gap-10 justify-between items-center xl:gap-20 relative">
@@ -142,7 +135,7 @@ const SignUp = () => {
 
         <div className="lg:w-1/2 w-full flex justify-center">
           <div className="learning-image bg-[#f3f9ff] rounded-full w-[300px] sm:w-[450px] lg:w-[550px] aspect-square p-6 flex items-center justify-center shadow-inner">
-            <img src={learningImage} alt="learning" className="w-full h-full object-contain" />
+            <img src={"/Images/learning_image.png"} alt="learning" className="w-full h-full object-contain" />
           </div>
         </div>
       </div>

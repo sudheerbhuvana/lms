@@ -4,13 +4,6 @@ import { faHome } from "@fortawesome/free-regular-svg-icons";
 import { Link } from "react-router-dom";
 import { getPublishedCourses } from "../api/courses";
 
-import element1 from "../../public/Images/element-01.png";
-import element2 from "../../public/Images/element-02.png";
-import element3 from "../../public/Images/element-03.png";
-import element4 from "../../public/Images/element-04.png";
-import element5 from "../../public/Images/element-05.png";
-import element6 from "../../public/Images/element-06.png";
-
 const LEVEL_OPTIONS = ["All", "BEGINNER", "INTERMEDIATE", "ADVANCED"];
 
 const SkeletonCard = () => (
@@ -87,12 +80,12 @@ const Course = () => {
             <span className="text-sm xl:text-md text-[#f37739]">Courses</span>
           </li>
         </ul>
-        <img src={element1} alt="shape" className="element1 shape1 absolute left-30 top-30 object-contain hidden md:block" />
-        <img src={element2} alt="shape" className="element2 shape2 absolute left-20 top-60 object-contain hidden md:block" />
-        <img src={element3} alt="shape" className="element3 shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block" />
-        <img src={element4} alt="shape" className="element4 shape4 absolute right-30 bottom-30 z-2 object-contain hidden lg:block" />
-        <img src={element5} alt="shape" className="element5 shape5 absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex" />
-        <img src={element5} alt="shape" className="element5 shape6 absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex" />
+        <img src={"/Images/element-01.png"} alt="shape" className="shape1 absolute left-30 top-30 object-contain hidden md:block" />
+        <img src={"/Images/element-02.png"} alt="shape" className="shape2 absolute left-20 top-60 object-contain hidden md:block" />
+        <img src={"/Images/element-03.png"} alt="shape" className="shape3 absolute right-96 bottom-10 z-2 object-contain hidden lg:block" />
+        <img src={"/Images/element-04.png"} alt="shape" className="shape4 absolute right-30 bottom-30 z-2 object-contain hidden lg:block" />
+        <img src={"/Images/element-05.png"} alt="shape" className="shape5 absolute right-30 top-70 w-[20px] h-[20px] hidden sm:flex" />
+        <img src={"/Images/element-05.png"} alt="shape" className="shape6 absolute left-10 bottom-50 w-[25px] h-[25px] hidden sm:flex" />
       </div>
 
       <div className="px-[2%] lg:px-[12%] sm:px-[8%] py-[90px] lg:py-[120px] bg-[#f3f9ff] relative">
@@ -203,9 +196,9 @@ const Course = () => {
           </div>
         )}
 
-        <img src={element1} alt="shape" className="element1 hero-shape1 absolute left-30 top-30 object-contain hidden lg:block" />
-        <img src={element2} alt="shape" className="element2 hero-shape2 absolute left-20 top-60 object-contain hidden lg:block" />
-        <img src={element6} alt="shape" className="element5 hero-shape7 absolute right-50 top-20 hidden lg:flex" />
+        <img src={"/Images/element-01.png"} alt="shape" className="hero-shape1 absolute left-30 top-30 object-contain hidden lg:block" />
+        <img src={"/Images/element-02.png"} alt="shape" className="hero-shape2 absolute left-20 top-60 object-contain hidden lg:block" />
+        <img src={"/Images/element-06.png"} alt="shape" className="hero-shape7 absolute right-50 top-20 hidden lg:flex" />
       </div>
     </>
   );

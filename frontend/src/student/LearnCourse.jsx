@@ -394,12 +394,20 @@ const LearnCourse = () => {
                 <p className="text-sm opacity-90 mb-4">
                   Congratulations! You've completed all {lessons.length} lessons in this course.
                 </p>
-                <Link
-                  to="/dashboard"
-                  className="bg-white text-[#076dcd] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors inline-block"
-                >
-                  Back to Dashboard
-                </Link>
+                <div className="flex gap-3 justify-center flex-wrap">
+                  <Link
+                    to={`/student/certificate/${courseId}`}
+                    className="bg-[#f37739] hover:bg-[#e06828] text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-colors inline-flex items-center gap-2"
+                  >
+                    <i className="bi bi-award-fill"></i> Get Your Certificate
+                  </Link>
+                  <Link
+                    to="/student/dashboard"
+                    className="bg-white text-[#076dcd] px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-gray-100 transition-colors inline-block"
+                  >
+                    Back to Dashboard
+                  </Link>
+                </div>
               </div>
             )}
           </div>
