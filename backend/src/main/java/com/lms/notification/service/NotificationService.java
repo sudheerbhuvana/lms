@@ -12,4 +12,7 @@ public interface NotificationService {
 	List<NotificationResponseDto> getMyNotifications(Long userId);
 
 	void markAsRead(Long notificationId);
+
+	/** Fan-out an announcement to all students enrolled in the instructor's courses */
+	void sendAnnouncement(Long instructorId, String title, String message);
 }

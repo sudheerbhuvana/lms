@@ -1,13 +1,16 @@
 package com.lms.notification.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,5 +40,16 @@ public class NotificationController {
 	public ResponseEntity<ApiResponse<Void>> markAsRead(@PathVariable Long id) {
 		notificationService.markAsRead(id);
 		return ResponseEntity.ok(ApiResponse.success("Marked as read"));
+	}
+
+	@PostMapping("/send-announcement")
+	@PreAuthorize("hasRole('INSTRUCTOR')")
+	public ResponseEntity<ApiResponse<Void>> sendAnnouncement(Authentication auth,
+			@RequestBody Map<String, String> body) {
+		Long instructorId = (Long) auth.getCredentials();
+		String title = body.getOrDefault("title", "Announcement");
+		String message = body.getOrDefault("message", "");
+		notificationService.sendAnnouncement(instructorId, title, message);
+		return ResponseEntity.ok(ApiResponse.success("Announcement sent"));
 	}
 }
